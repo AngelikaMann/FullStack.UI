@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Employee } from '../../../models/employee.model';
 import { EmployeesService } from '../../../services/employees.service';
 import e, { response } from 'express';
-
+import { FormsModule } from '@angular/forms';
+import { RouterOutlet, RouterLink, RouterLinkActive} from '@angular/router';
 @Component({
   selector: 'app-employees-list',
   standalone: true,
-  imports: [],
+  imports: [FormsModule,RouterOutlet, RouterLink,RouterLinkActive],
   templateUrl: './employees-list.component.html',
   styleUrl: './employees-list.component.css'
 })
