@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable} from '@angular/core';
 import { Employee } from '../models/employee.model';
 import { Observable } from 'rxjs';
+import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +25,9 @@ readonly baseApiUrl='https://localhost:7261/api';
   }
   updateEmployee(id:string,updateEmployeeRequest:Employee):Observable<Employee>{
     return this.http.put<Employee>(this.baseApiUrl+'/employees/'+ id, updateEmployeeRequest);
+    }
+
+    deleteEmployee(id:string):Observable<Employee>{
+      return this.http.delete<Employee>(this.baseApiUrl+'/employees/'+ id);
     }
 }
