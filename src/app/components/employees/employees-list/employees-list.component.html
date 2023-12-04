@@ -24,11 +24,8 @@
         <td>{{ employee.department }}</td>
         <td>
           <a
-            routerLink="/employees/edit/:id"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            >View</a
-          >
+          [routerLink]="['/employees','edit', employee.id]"
+            >Edit</a>
         </td>
       </tr>
       }
